@@ -1,0 +1,28 @@
+Users (UserID*, Username, Password, FirstName, LastName, Gender, Birthday, Email)
+
+Leagues (LeagueID*, LeagueName, UserID)
+  Foreign Key UserID references Users
+  
+Teams (TeamID*, LeagueID, UserID, TeamName, PlayerOneID, PlayerTwoID, PlayerThreeID, PlayerFourID, PlayerFiveID)
+  Foreign Key LeagueID references Leagues
+  Foreign Key UserID references Users
+  Foreign Key PlayerOneID References Players
+  Foreign Key PlayerTwoID References Players
+  Foreign Key PlayerThreeID References Players
+  Foreign Key PlayerFourID References Players
+  Foreign Key PlayerFiveID References Players
+  
+Players (PlayerID*, Name, Role, Kills, Deaths, Assists, WeeksOfPlay)
+
+
+
+
+- Users table holds all information about users on the platform
+- Leagues table holds ownership info for a created league
+- Teams table holds a created team of professional players with the user that created it and the league it belongs to
+- Players table holds data for all the professional players of an esport
+
+
+
+
+- All table and column names are self-explanatory
