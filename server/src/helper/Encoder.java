@@ -18,4 +18,8 @@ public class Encoder {
     public static String encode(RegisterResponse response) {
         return new Gson().toJson(response);
     }
+
+    public static String encode(LoginResponse response) {
+        return new Gson().toJson(response);
+    }
 }
