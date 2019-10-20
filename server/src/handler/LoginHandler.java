@@ -1,27 +1,27 @@
 package handler;
 
-import business.RegisterBusiness;
-import request.RegisterRequest;
-import response.RegisterResponse;
+import business.LoginBusiness;
+import request.LoginRequest;
+import response.LoginResponse;
 import helper.*;
 
 import java.io.*;
 import java.net.*;
 import com.sun.net.httpserver.*;
 
-public class RegisterHandler implements HttpHandler {
+public class LoginHandler implements HttpHandler {
     public void handle(HttpExchange exchange) throws IOException {
-        RegisterResponse response;
-        RegisterBusiness registerBusiness = new RegisterBusiness();
+        LoginResponse response;
+        LoginBusiness loginBusiness = new LoginBusiness();
 
         try {
             if (exchange.getRequestMethod().toLowerCase().equals("post")) {
                 Reader reader = new InputStreamReader(exchange.getRequestBody());
-                RegisterRequest request = Decoder.decodeRegisterRequest(reader);
+                LoginRequest request = Decoder.decodeLoginRequest(reader);
 
-                response = registerBusiness.register(request);
+                response = loginBusiness.login(request);
 
-                // Message will be null if no errors were thrown
+                //Message will be null if not errors were thrown
                 if (response.getMessage() != null) {
                     exchange.sendResponseHeaders(HttpURLConnection.HTTP_BAD_REQUEST, 0);
                 } else {

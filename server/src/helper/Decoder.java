@@ -13,4 +13,8 @@ public class Decoder {
     public static RegisterRequest decodeRegisterRequest(Reader json) {
         return new Gson().fromJson(json, RegisterRequest.class);
     }
+
+    public static LoginRequest decodeLoginRequest(Reader json) {
+        return new Gson().fromJson(json, LoginRequest.class);
+    }
 }
