@@ -3,6 +3,7 @@ package server;
 import java.io.*;
 import java.net.*;
 import com.sun.net.httpserver.*;
+import handler.RegisterHandler;
 
 
 public class Server {
@@ -24,6 +25,7 @@ public class Server {
         server.setExecutor(null);
 
         // Create contexts here
+        server.createContext("/user/regiser", new RegisterHandler());
 
         System.out.println("Starting server");
 
