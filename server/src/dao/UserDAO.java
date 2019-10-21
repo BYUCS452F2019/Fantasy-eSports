@@ -27,4 +27,18 @@ public class UserDAO {
     public User findByUsername(String username) throws DataAccessException {
         return new User();
     }
+
+    /**
+     * Updates user if found in database
+     * @param user - user with updated info
+     * @return User - updated User
+     * @throws DataAccessException
+     */
+    public User update(User user) throws DataAccessException {
+        return user;
+    }
+
+    public User delete(String id) throws DataAccessException {
+        return new User();
+    }
 }

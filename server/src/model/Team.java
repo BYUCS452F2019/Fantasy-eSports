@@ -7,6 +7,8 @@ public class Team {
     private String name;
     private String[] playerIds;
 
+    public Team() {}
+
     public Team(String id, String leagueId, String userId, String name, String[] playerIds) {
         this.id = id;
         this.leagueId = leagueId;
